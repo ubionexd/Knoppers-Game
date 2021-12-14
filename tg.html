@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <style>
+            .button {
+                text-align: center;
+                padding-top: 50px;
+            }
+
+            .button a {
+                background-color: cornflowerblue;
+                padding: 10px;
+                border-radius: 5px;
+                cursor: pointer;
+                font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            }
+        </style>
+        <script>
+            var audio = new Audio("https://www.dropbox.com/s/a4zx42gh6r487bx/Game_Music2.mp3?dl=1")
+            let randomNumber = Math.random() * (15000 - 60000)
+
+            function randomIntFromInterval(min, max) { // min and max included 
+                return Math.floor(Math.random() * (max - min + 1) + min)
+                    }
+  
+                const rndInt = randomIntFromInterval(15000, 60000)
+                console.log(rndInt)
+
+            function start() {
+                console.log("Indul a muzsika!")
+
+                audio.play()
+    
+                var timer = setTimeout(function() {
+                    audio.pause()
+                    location.reload();
+                }, rndInt);
+            }
+
+        </script>
+    </head>
+    <body>
+        <div class="button">
+            <a id="play" onclick="start()">Induljon a muzsika!</a>
+        </div>
+    </body>
+</html>
