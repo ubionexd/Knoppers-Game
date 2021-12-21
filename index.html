@@ -1,107 +1,116 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="utf-8">
-        <title>That Game</title>
-        <style>
-            html {
-                background-color: #2f2f2f;
-            }
-            
-            .title {
-                font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-                font-weight: bolder;
-                color: #fff;
-                text-align: center;
-                padding-top: 30px;
-            }
 
-            .subtitle {
-                font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-                color: #525252;
-                text-align: center;
-            }
-            
-            .button {
-                text-align: center;
-                padding-top: 30px;
-                list-style: none;
-            }
+<head>
+    <meta charset="utf-8">
+    <title>Knoppers Game</title>
+    <link rel="icon" type="image/svg+xml" href="https://www.dropbox.com/s/fssk2x0hw8cfd40/icon.svg?dl=1">
+    <style>
+        html {
+            background-color: #2f2f2f;
+        }
 
-            .play {
-                background-color: #6495ed;
-                padding: 10px;
-                padding-right: 100px;
-                padding-left: 100px;
-                border-radius: 5px;
-                cursor: pointer;
-                font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-            }
+        .title {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            font-weight: bolder;
+            color: #fff;
+            text-align: center;
+            padding-top: 30px;
+        }
 
-            .text {
-                color: #6495ed;
-                padding-top: 30px;
-                font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-                font-weight: bolder;
-                text-decoration: none;
-            }
+        .subtitle {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            color: #525252;
+            text-align: center;
+        }
 
-            .button li {
-                padding-top: 40px;
-            }
-        </style>
-        <script>
-            var audio = new Audio("https://www.dropbox.com/s/a4zx42gh6r487bx/Game_Music2.mp3?dl=1")
-            let randomNumber = Math.random() * (15000 - 60000)
+        .subtitle a {
+            color: #525252;
+        }
 
-            function randomIntFromInterval(min, max) { // min and max included 
-                return Math.floor(Math.random() * (max - min + 1) + min)
-                    }
-  
-                const rndInt = randomIntFromInterval(15000, 60000)
-                console.log(rndInt)
+        .button {
+            text-align: center;
+            padding-top: 30px;
+            list-style: none;
+        }
 
-            function start() {
-                document.getElementById("text").innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" style="margin: auto; background: rgb(47, 47, 47) none repeat scroll 0% 0%; display: block; shape-rendering: auto; animation-play-state: running; animation-delay: 0s;" width="30px" height="30px" viewBox="0 0 100 100" preserveAspectRatio="xMidYMid"><circle cx="50" cy="50" fill="none" stroke="#6495ed" stroke-width="25" r="26" stroke-dasharray="122.52211349000194 42.840704496667314" style="animation-play-state: running; animation-delay: 0s;"><animateTransform attributeName="transform" type="rotate" repeatCount="indefinite" dur="0.7042253521126761s" values="0 50 50;360 50 50" keyTimes="0;1" style="animation-play-state: running; animation-delay: 0s;"></animateTransform></circle></svg>'
-                document.getElementById("text").style.cursor = "wait"
-                document.getElementById("play").style.color = "#6495ed"
-                document.getElementById("play").style.cursor = "not-allowed"
-                
-                var music = setTimeout(() => {
-                    console.log("Indul a zene")
-                    document.getElementById("text").style.cursor = "pointer"
-                    
-                    audio.play()
+        .play {
+            background-color: #6495ed;
+            padding: 10px;
+            padding-right: 100px;
+            padding-left: 100px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        }
+
+        .text {
+            color: #6495ed;
+            padding-top: 30px;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            font-weight: bolder;
+            text-decoration: none;
+        }
+
+        .button li {
+            padding-top: 40px;
+        }
+    </style>
+    <script>
+        var audio = new Audio("https://www.dropbox.com/s/a4zx42gh6r487bx/Game_Music2.mp3?dl=1")
+        let randomNumber = Math.random() * (15000 - 60000)
+
+        function randomIntFromInterval(min, max) { // min and max included 
+            return Math.floor(Math.random() * (max - min + 1) + min)
+        }
+
+        const rndInt = randomIntFromInterval(15000, 60000)
+        console.log(rndInt)
+
+        function start() {
+            document.getElementById("text").innerHTML =
+                '<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" style="margin: auto; background: rgb(47, 47, 47) none repeat scroll 0% 0%; display: block; shape-rendering: auto; animation-play-state: running; animation-delay: 0s;" width="30px" height="30px" viewBox="0 0 100 100" preserveAspectRatio="xMidYMid"><circle cx="50" cy="50" fill="none" stroke="#6495ed" stroke-width="25" r="26" stroke-dasharray="122.52211349000194 42.840704496667314" style="animation-play-state: running; animation-delay: 0s;"><animateTransform attributeName="transform" type="rotate" repeatCount="indefinite" dur="0.7042253521126761s" values="0 50 50;360 50 50" keyTimes="0;1" style="animation-play-state: running; animation-delay: 0s;"></animateTransform></circle></svg>'
+            document.getElementById("text").style.cursor = "wait"
+            document.getElementById("play").style.color = "#6495ed"
+            document.getElementById("play").style.cursor = "not-allowed"
+
+            var music = setTimeout(() => {
+                console.log("Indul a zene")
+                document.getElementById("text").style.cursor = "pointer"
+
+                audio.play()
+            }, 3000)
+
+            var timer = setTimeout(function () {
+                audio.pause()
+                clearInterval()
+
+                document.getElementById("text").textContent = "STOP!"
+
+                var reload = setTimeout(() => {
+                    location.reload()
                 }, 3000)
+            }, rndInt);
 
-                var timer = setTimeout(function() {
-                    audio.pause()
-                    
-                    document.getElementById("text").textContent = "STOP!"
+            var flash = setInterval(() => {
+                document.getElementById("text").textContent = "Context Sensitive - C R A B S T E P"
 
-                    var reload = setTimeout(() => {
-                        location.reload()
-                    }, 3000)
-                }, rndInt);
+                var flash2 = setTimeout(() => {
+                    document.getElementById("text").textContent = null;
+                }, 2000)
+            }, 4000)
+        }
+    </script>
+</head>
 
-                var flash = setInterval(() => {
-                    document.getElementById("text").textContent = "Context Sensitive - C R A B S T E P"
+<body>
 
-                    var flash2 = setTimeout(() => {
-                        document.getElementById("text").textContent = null;
-                    }, 2000)
-                }, 4000)
-            }
+    <h1 class="title">Knoppers Game</h1>
+    <h6 class="subtitle">Made by <a href="https://github.com/ubionexd/" target="_blank">UbiOneXD</a></h6>
+    <div class="button">
+        <li><a id="play" class="play" onclick="start()">Induljon a muzsika!</a></li>
+        <li><a id="text" class="text" href="https://context-sensitive.com" target="_blank">PRESS TO START!</a></li>
+    </div>
+</body>
 
-        </script>
-    </head>
-    <body>
-        
-        <h1 class="title">Knoppers Game</h1>
-        <h6 class="subtitle">Made by <a>UbiOneXD</a></h6>
-        <div class="button">
-            <li><a id="play" class="play" onclick="start()">Induljon a muzsika!</a></li>
-            <li><a id="text" class="text" href="https://context-sensitive.com" target="_blank">PRESS TO START!</a></li>
-        </div>
-    </body>
 </html>
